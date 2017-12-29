@@ -1,0 +1,18 @@
+<resources>
+    <!-- Strings that are used throughout the application - on TextViews, EditTexts,
+         Buttons, etc. -->
+    <string name="app_name">Memo</string>
+    <string name="app_title">MemoLog</string>
+    <string name="action_settings">Settings</string>
+    <string name="add_new_memo">Add a New Memo:</string>
+    <string name="display_memos">(Select Memo for Options)</string>
+    <string name="memo_subject_hint">Subject</string>
+    <string name="memo_description_hint">Description (Optional)</string>
+    <string name="importance_normal">Normal</string>
+    <string name="importance_important">Important</string>
+    <string name="importance_urgent">Urgent</string>
+    <string name="confirm">Confirm</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="edit_memo">Edit Memo</string>
+</resources>

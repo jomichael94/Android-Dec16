@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.memo.MainActivity">
+
+    <!-- Create a RelativeLayout and set the background colour -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent">
+
+    </RelativeLayout>
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:background="@color/colorPrimary">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="@string/app_title" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+    <!-- Define a FloatingActionButton which will add a new memo when clicked -->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="60dp"
+        android:layout_height="55dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_input_add"
+        app:backgroundTint="@color/colorPrimary"
+        app:rippleColor="@color/white" />
+
+    <!-- Define a ScrollView which will allow the user to scroll through memos -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="139dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true">
+
+        <!-- Inside the ScrollView, create a LinearLayout which will hold
+             all of the dynamically created TextViews for displaying each
+             memo -->
+        <!-- Making it linear allows the TextViews to be added one after another,
+             similar to a list -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/memos_linear">
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Inside another layout, create a header for the activity and style accordingly -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/memosHeader"
+            style="@style/HeaderText"
+            android:text="@string/display_memos" />
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

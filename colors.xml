@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Define colours that are used throughout the application -->
+    <color name="colorPrimary">#e20514</color>
+    <color name="colorPrimaryDark">#8e0406</color>
+    <color name="colorAccent">#2e0001</color>
+    <color name="white">#ffffff</color>
+    <color name="text_hint">#a7a8aa</color>
+    <color name="importanceNormal">#0f9e41</color>
+    <color name="importanceImportant">#bbc113</color>
+    <color name="importanceUrgent">#ff0707</color>
+</resources>

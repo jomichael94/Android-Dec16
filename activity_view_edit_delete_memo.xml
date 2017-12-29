@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.memo.ViewEditDeleteMemo">
+
+    <!-- Define a RelativeLayout and set background -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent">
+
+        <!-- Inside the RelativeLayout, create a TextView which will act as a header.
+             It is styled appropriately as a header. -->
+        <TextView
+            android:id="@+id/singleMemoHeader"
+            style="@style/HeaderText"
+            android:text="@string/edit_memo" />
+
+        <!-- Create EditTexts for editing the memo subject and description -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editSubject"
+            android:padding="20dp"
+            android:hint="@string/memo_subject_hint"
+            android:textColorHint="@color/text_hint"
+            android:textSize="22sp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_below="@+id/singleMemoHeader"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editDesc"
+            android:padding="20dp"
+            android:hint="@string/memo_description_hint"
+            android:textColorHint="@color/text_hint"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:layout_alignTop="@+id/editSubject"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="53dp" />
+
+        <!-- Create three CheckBoxes for updating the importance level of a memo -->
+        <CheckBox
+            android:text="@string/importance_urgent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/updateUrgentCB"
+            android:textColor="@color/white"
+            app:buttonTint="@color/white"
+            android:background="@color/importanceUrgent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_alignBaseline="@+id/updateImportantCB"
+            android:layout_alignBottom="@+id/updateImportantCB"
+            android:layout_toEndOf="@+id/updateImportantCB" />
+
+        <CheckBox
+            android:text="@string/importance_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/updateNormalCB"
+            android:textColor="@color/white"
+            app:buttonTint="@color/white"
+            android:onClick="normalSelect"
+            android:background="@color/importanceNormal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_above="@+id/updateMemoBtn"
+            android:layout_toStartOf="@+id/updateImportantCB"
+            android:layout_marginBottom="15dp" />
+
+        <CheckBox
+            android:text="@string/importance_important"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/updateImportantCB"
+            android:textColor="@color/white"
+            app:buttonTint="@color/white"
+            android:background="@color/importanceImportant"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_alignBaseline="@+id/updateNormalCB"
+            android:layout_alignBottom="@+id/updateNormalCB"
+            android:layout_centerHorizontal="true" />
+
+        <!-- Define two Buttons which will be used to either update or delete
+             the memo -->
+        <Button
+            android:text="@string/update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/updateMemoBtn"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="13dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignEnd="@+id/updateUrgentCB" />
+
+        <Button
+            android:text="@string/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deleteMemoBtn"
+            android:layout_alignBaseline="@+id/updateMemoBtn"
+            android:layout_alignBottom="@+id/updateMemoBtn"
+            android:layout_alignStart="@+id/updateNormalCB"
+            android:layout_marginStart="45dp" />
+
+    </RelativeLayout>
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:background="@color/colorPrimary">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="@string/app_title" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_view_edit_delete_memo" />
+
+</android.support.design.widget.CoordinatorLayout>

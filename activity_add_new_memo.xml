@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.memo.AddNewMemo">
+
+    <!-- Create a RelativeLayout and set background colour -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent">
+
+        <!-- Inside layout create a TextView for header text and use the header style -->
+        <TextView
+            android:id="@+id/addNewMemoTV"
+            style="@style/HeaderText"
+            android:text="@string/add_new_memo" />
+
+        <!-- Create two EditTexts for entering subject and description of a memo -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/subjectText"
+            android:padding="20dp"
+            android:hint="@string/memo_subject_hint"
+            android:textColorHint="@color/text_hint"
+            android:textSize="22sp"
+            android:textColor="@color/white"
+            android:layout_below="@+id/addNewMemoTV"
+            android:layout_alignParentStart="true"
+            android:textAllCaps="false" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/descText"
+            android:padding="20dp"
+            android:hint="@string/memo_description_hint"
+            android:textColorHint="@color/text_hint"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:layout_below="@+id/addNewMemoTV"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="57dp" />
+
+        <!-- Create three CheckBoxes for each importance level -->
+        <CheckBox
+            android:text="@string/importance_important"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/importantCB"
+            android:textColor="@color/white"
+            app:buttonTint="@android:color/background_light"
+            android:layout_alignBaseline="@+id/normalCB"
+            android:layout_alignBottom="@+id/normalCB"
+            android:layout_centerHorizontal="true"
+            android:background="@color/importanceImportant"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+
+        <CheckBox
+            android:text="@string/importance_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/normalCB"
+            android:textColor="@color/white"
+            app:buttonTint="@android:color/background_light"
+            android:layout_marginBottom="13dp"
+            android:background="@color/importanceNormal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_above="@+id/confirmMemoBtn"
+            android:layout_toStartOf="@+id/importantCB" />
+
+        <CheckBox
+            android:text="@string/importance_urgent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/urgentCB"
+            android:textColor="@color/white"
+            app:buttonTint="@android:color/background_light"
+            android:background="@color/importanceUrgent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_alignBaseline="@+id/importantCB"
+            android:layout_alignBottom="@+id/importantCB"
+            android:layout_toEndOf="@+id/importantCB" />
+
+        <!-- Create a button to confirm a new memo -->
+        <Button
+            android:text="@string/confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/confirmMemoBtn"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/importantCB"
+            android:layout_marginBottom="17dp" />
+    </RelativeLayout>
+
+    <include layout="@layout/content_add_new_memo"
+        android:layout_weight="1" />
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:background="@color/colorPrimary">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="@string/app_title" />
+
+    </android.support.design.widget.AppBarLayout>
+
+</android.support.design.widget.CoordinatorLayout>
